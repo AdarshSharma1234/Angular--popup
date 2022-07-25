@@ -4,22 +4,24 @@
     <div class="mx-auto w-1/3 shadow-2xl bg-sky-500 p-4 rounded mt-10" >
        <h1 class="text-white text-2xl font-bold text-center mt-4">Create Facebook Account</h1>
        <p class="text-white text-lg text-center mt-3 ">Already Have an account?<span class="text-red-600 hover:underline  underline-offset-4 cursor-pointer"> Login </span></p>
+       <form #facebook="ngForm" (ngSubmit)="onsubmmit(facebook.value)">
         <div class="grid grid-cols-2 gap-5">
             <div class="mt-4">
-                <input type="text" name="firstname" id="firstname" class="w-full py-2 px-3 border border-red-500 rounded" placeholder="Enter firstname">
+                <input type="text" [(ngModel)]="user.firstname" name="firstname"  #firstname="ngModel" id="firstname" class="w-full py-2 px-3 border border-red-500 rounded" placeholder="Enter firstname">
             </div>
             <div class="mt-4">
-                <input type="text" name="lastname" id="lastname" class="w-full py-2 px-3 border border-red-500 rounded" placeholder="Enter lastname">
+                <input type="text" [(ngModel)]="user.lastname" name="lastname" #lastname="ngModel" id="lastname" class="w-full py-2 px-3 border border-red-500 rounded" placeholder="Enter lastname">
             </div>
         </div>
         <div class="mt-4">
-            <input type="email" name="email" id="email" class="w-full py-2 px-3 border border-red-500 rounded" placeholder="Enter email">
+            <input type="email" [(ngModel)]="user.email" name="email" #email="ngModel" id="email" class="w-full py-2 px-3 border border-red-500 rounded" placeholder="Enter email">
         </div>
         <div class="mt-4">
-            <input type="password" name="password" id="password" class="w-full py-2 px-3 border border-red-500 rounded" placeholder="Enter password">
+            <input type="password" [(ngModel)]="user.password" name="password" #password="ngModel" id="password" class="w-full py-2 px-3 border border-red-500 rounded" placeholder="Enter password">
         </div>
         <div class="mt-4">
-            <input type="re-type password" name="re-type password" id="re-type password" class="w-full py-2 px-3 border border-red-500 rounded" placeholder="Enter re-type password">
+            <input type="re-type password" [(ngModel)]="user.retypepassword" name="re-type password" #retypepassword="ngModel" id="re-type password" class="w-full py-2 px-3 border border-red-500 rounded"
+             placeholder="Enter re-type password">
         </div>
 
         <div class="flex  gap-2">
@@ -32,11 +34,22 @@
         <div class="mt-4">
             <button class="bg-blue-600 hover:bg-blue-800 text-white w-full py-2 rounded font-semibold">Sign-up</button>
         </div>
+       </form>
+       
 
         <div class="flex  justify-center gap-10 mt-4">
-            <img src="../../assets/google.logo.png" class="w-20 h-10 mt-2 border-2 border-white bg-white rounded " alt="">
-            <img src="../../assets/github-logo.jpg" class="w-14 h-14 rounded-full  border-8 border-sky-700 " alt="">
-            <img src="../../assets/fbICON7.png" alt="" class="w-14 h-14">
+            <a href="https://www.google.com">
+                <img src="../../assets/google.logo.png" class="w-20 h-10 mt-2 border-2 border-white bg-white rounded " alt="">
+            </a>
+            <a href="https://github.com">
+                <img src="../../assets/github-logo.jpg" class="w-14 h-14 rounded-full  border-8 border-sky-700 " alt="">
+            </a>
+            <a href="https://www.Facebook.com">
+                <img src="../../assets/fbICON7.png" alt="" class="w-14 h-14">
+            </a>
+           
+           
+            
             
         </div>
     </div>
